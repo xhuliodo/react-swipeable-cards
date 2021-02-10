@@ -1,5 +1,5 @@
 {
-  "name": "@xhuliodo/react-swipeable-cards",
+  "name": "react-swipeable-cards",
   "version": "1.0.6",
   "description": "react-swipeable-cards React component",
   "main": "lib/index.js",
