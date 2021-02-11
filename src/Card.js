@@ -44,7 +44,8 @@ export default class Card extends Component {
         var newClass = this.state.classList.filter((s) => s !== "moving");
         this.setState({ classList: newClass });
         var moveOutWidth = document.body.clientWidth;
-        var keep = Math.abs(event.deltaX) < this.props.swipeSensitivity || 300;
+        const sensitivity = this.props.swipeSensitivity || 300;
+        var keep = Math.abs(event.deltaX) < sensitivity;
         event.target.classList.toggle("removed", !keep);
         if (keep) {
           event.target.style.transform = "";
