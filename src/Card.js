@@ -35,6 +35,11 @@ export default class Card extends Component {
     }
   }
 
+  onPanCancel(event) {
+    // removing the ghostly freezing on mobile
+    event.target.style.transform = "";
+  }
+
   onPanEnd(event) {
     if (this.props.isSwipeEnabled !== false) {
       if (
@@ -91,6 +96,7 @@ export default class Card extends Component {
         onPan={this.onPan.bind(this)}
         onPanEnd={this.onPanEnd.bind(this)}
         onDoubleTap={this.onDoubleTap.bind(this)}
+        onPanCancel={this.onPanCancel.bind(this)}
       >
         <div
           className={this.state.classList.join(" ")}
