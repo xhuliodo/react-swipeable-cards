@@ -18,9 +18,8 @@ export default class Card extends Component {
         (this.props.isRightSwipeEnabled !== false && event.deltaX >= 0)
       ) {
         this.state.classList.push("moving");
-        if (event.deltaX === 0) event.target.style.transform = "";
-        if (event.center.x === 0 && event.center.y === 0)
-          event.target.style.transform = "";
+        if (event.deltaX === 0) return;
+        if (event.center.x === 0 && event.center.y === 0) return;
         var xMulti = event.deltaX * 0.03;
         var yMulti = event.deltaY / 80;
         var rotate = xMulti * yMulti;
